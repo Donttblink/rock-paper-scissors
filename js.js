@@ -2,9 +2,14 @@ function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 100) + 1;
   if (randomNumber <= 33) {
     return "Rock";
-  } else if (randomNumber >= 33 && randomNumber<= 64) {
+  } else if (randomNumber >= 33 && randomNumber<= 66) {
     return "Paper";
   } else {
     return "Scissors";
   }
+}
+
+function getHumanChoice("Rock", "Paper", "Scissors") {
+  
+
 }
