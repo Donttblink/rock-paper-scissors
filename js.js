@@ -11,7 +11,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("Choose Your Character; Rock, Paper, Scissors");
-  return choice.toLowerCase;
+  return choice.toLowerCase();
 }
 
 let humanScore = 0;
@@ -19,8 +19,13 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
   
-  if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper"))
+  if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")){
   return "You Win! Nice!";
+  } else if (humanChoice === computerChoice) {
+    return "Crazyyy, you tied?!";
+  } else {
+    return "You Lost Bucko!"
+  }
 }
 
   
