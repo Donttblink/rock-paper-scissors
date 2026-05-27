@@ -1,17 +1,17 @@
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 100) + 1;
   if (randomNumber <= 33) {
-    return "Rock";
+    return "rock";
   } else if (randomNumber >= 33 && randomNumber <= 66) {
-    return "Paper";
+    return "paper";
   } else {
-    return "Scissors";
+    return "scissors";
   }
 }
 
 function getHumanChoice() {
   let choice = prompt("Choose Your Character; Rock, Paper, Scissors");
-  return choice;
+  return choice.toLowerCase;
 }
 
 let humanScore = 0;
@@ -19,7 +19,7 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
   
-  if ((humanChoice === "Rock" && computerChoice === "Scissors") || (humanChoice === "Paper" && computerChoice === "Rock") || (humanChoice === "Scissors" && computerChoice === "Paper"))
+  if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper"))
   return "You Win! Nice!";
 }
 
