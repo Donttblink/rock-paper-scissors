@@ -18,8 +18,11 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-  
+  if ((humanChoice === "Rock" && computerChoice === "Scissors") || (humanChoice === "Paper" && computerChoice === "Rock") || (humanChoice === "Scissors" && computerChoice === "Paper"))
+  return "You Win! Nice!";
 }
+
+  
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
