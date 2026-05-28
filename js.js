@@ -35,16 +35,20 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+  let humanSelection = getHumanChoice();
+  let computerSelection = getComputerChoice();
+ console.log("Human:", humanSelection, "Computer:", computerSelection); 
   playRound(humanSelection, computerSelection);
-  if (playRound() = "win") {
-    ++humanScore;
-  } else if (playRound() = "lose") {
-    ++computerScore;
-  } else {
-    
-  }
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+ console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  playRound(humanSelection, computerSelection);
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+ console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  playRound(humanSelection, computerSelection);
+ 
+
   }
 
 
