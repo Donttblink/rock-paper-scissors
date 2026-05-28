@@ -32,6 +32,7 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
+
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
@@ -39,15 +40,26 @@ function playGame() {
   let computerSelection = getComputerChoice();
  console.log("Human:", humanSelection, "Computer:", computerSelection); 
   playRound(humanSelection, computerSelection);
+
   humanSelection = getHumanChoice();
   computerSelection = getComputerChoice();
  console.log("Human:", humanSelection, "Computer:", computerSelection); 
   playRound(humanSelection, computerSelection);
+
   humanSelection = getHumanChoice();
   computerSelection = getComputerChoice();
  console.log("Human:", humanSelection, "Computer:", computerSelection); 
   playRound(humanSelection, computerSelection);
  
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+ console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  playRound(humanSelection, computerSelection);
+  
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+ console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  playRound(humanSelection, computerSelection);
 
   }
 
