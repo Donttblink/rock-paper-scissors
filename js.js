@@ -15,10 +15,9 @@ function getHumanChoice() {
 }
 
 function playGame() {
-   let humanScore = 0;
-   let computerScore = 0;
+  let humanScore = 0;
+  let computerScore = 0;
   function playRound(humanChoice, computerChoice) {
-   
     if (
       (humanChoice === "rock" && computerChoice === "scissors") ||
       (humanChoice === "paper" && computerChoice === "rock") ||
@@ -62,14 +61,10 @@ function playGame() {
   console.log("Human:", humanSelection, "Computer:", computerSelection);
   playRound(humanSelection, computerSelection);
   if (humanScore > computerScore) {
-    alert(`You Rule!${humanScore} AI Drools!${computerScore}`) 
+    alert(`You Rule!${humanScore} AI Drools!${computerScore}`);
   } else if (computerScore > humanScore) {
-    alert(`You're No John Connor!${humanScore} Loser!${computerScore}`)
+    alert(`You're No John Connor!${humanScore} Loser!${computerScore}`);
   } else {
     alert(`A Tie Really?${humanScore} Booooo!${computerScore}`);
   }
-
-  }
-
-  
-
+}
