@@ -14,42 +14,40 @@ function getHumanChoice() {
   return choice.toLowerCase();
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
  
-  if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")){
-  humanScore++;
-  alert("You Win! Nice!!")
-  return "win";
+  if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    alert("You Win! Nice!!");
+    return "win";
   } else if (humanChoice === computerChoice) {
     alert("Crazyyy, you tied?!");
     return "tie";
   } else {
-    computerScore++;
     alert("You Lost Bucko!");
     return "lose";
   }
 }
 
-
 function playGame() {
-  let rounds = 0;
+  let humanScore = 0;
+  let computerScore = 0;
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
-  if (playRound() === "win" || "lose" || "tie") {
-    rounds++;
-    alert(humanScore && computerScore);
-  }else {
-    alert ("Game Over!")
-
+  if (playRound() = "win") {
+    ++humanScore;
+  } else if (playRound() = "lose") {
+    ++computerScore;
+  } else {
+    
+  }
   }
 
-  }
-
- 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 
+  
 
