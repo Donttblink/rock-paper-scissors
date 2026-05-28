@@ -14,4 +14,4 @@ Match Results
 Create Scoreboard
   Get results of each match and display in console
 Each game is a single round
-Game consists of 5 rounds total.
+Game consists of 5 rounds total
