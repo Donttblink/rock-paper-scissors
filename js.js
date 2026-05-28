@@ -14,56 +14,62 @@ function getHumanChoice() {
   return choice.toLowerCase();
 }
 
-function playRound(humanChoice, computerChoice) {
- 
-  if (
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "paper" && computerChoice === "rock") ||
-    (humanChoice === "scissors" && computerChoice === "paper")
-  ) {
-    alert("You Win! Nice!!");
-    return "win";
-  } else if (humanChoice === computerChoice) {
-    alert("Crazyyy, you tied?!");
-    return "tie";
-  } else {
-    alert("You Lost Bucko!");
-    return "lose";
-  }
-}
-
-
 function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
+   let humanScore = 0;
+   let computerScore = 0;
+  function playRound(humanChoice, computerChoice) {
+   
+    if (
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+      alert("You Win! Nice!!");
+      humanScore++;
+      return "win";
+    } else if (humanChoice === computerChoice) {
+      alert("Crazyyy, you tied?!");
+      return "tie";
+    } else {
+      alert("You Lost Bucko!");
+      computerScore++;
+      return "lose";
+    }
+  }
+
   let humanSelection = getHumanChoice();
   let computerSelection = getComputerChoice();
- console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  console.log("Human:", humanSelection, "Computer:", computerSelection);
   playRound(humanSelection, computerSelection);
 
   humanSelection = getHumanChoice();
   computerSelection = getComputerChoice();
- console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  console.log("Human:", humanSelection, "Computer:", computerSelection);
   playRound(humanSelection, computerSelection);
 
   humanSelection = getHumanChoice();
   computerSelection = getComputerChoice();
- console.log("Human:", humanSelection, "Computer:", computerSelection); 
-  playRound(humanSelection, computerSelection);
- 
-  humanSelection = getHumanChoice();
-  computerSelection = getComputerChoice();
- console.log("Human:", humanSelection, "Computer:", computerSelection); 
-  playRound(humanSelection, computerSelection);
-  
-  humanSelection = getHumanChoice();
-  computerSelection = getComputerChoice();
- console.log("Human:", humanSelection, "Computer:", computerSelection); 
+  console.log("Human:", humanSelection, "Computer:", computerSelection);
   playRound(humanSelection, computerSelection);
 
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+  console.log("Human:", humanSelection, "Computer:", computerSelection);
+  playRound(humanSelection, computerSelection);
+
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+  console.log("Human:", humanSelection, "Computer:", computerSelection);
+  playRound(humanSelection, computerSelection);
+  if (humanScore > computerScore) {
+    alert("You Rule! AI Drools!") 
+  } else if (computerScore > humanScore) {
+    alert("You're No John Connor! Loser!")
+  } else {
+    alert("A Tie Really? Booooo!");
   }
 
-
+  }
 
   
 
