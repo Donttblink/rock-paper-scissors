@@ -26,9 +26,10 @@ function playRound(humanChoice, computerChoice) {
     return "Crazyyy, you tied?!";
   } else {
     computerScore++;
-    return "You Lost Bucko!"
+    return "You Lost Bucko!";
   }
 }
+
 
   
 const humanSelection = getHumanChoice();
