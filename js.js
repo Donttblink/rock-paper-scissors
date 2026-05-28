@@ -21,18 +21,35 @@ function playRound(humanChoice, computerChoice) {
  
   if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")){
   humanScore++;
-  return "You Win! Nice!";
+  alert("You Win! Nice!!")
+  return "win";
   } else if (humanChoice === computerChoice) {
-    return "Crazyyy, you tied?!";
+    alert("Crazyyy, you tied?!");
+    return "tie";
   } else {
     computerScore++;
-    return "You Lost Bucko!";
+    alert("You Lost Bucko!");
+    return "lose";
   }
 }
 
 
-  
+function playGame() {
+  let rounds = 0;
+  playRound(humanSelection, computerSelection);
+  if (playRound() === "win" || "lose" || "tie") {
+    rounds++;
+    alert(humanScore && computerScore);
+  }else {
+    alert ("Game Over!")
+
+  }
+
+  }
+
+ 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+
