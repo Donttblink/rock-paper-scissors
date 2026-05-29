@@ -65,7 +65,7 @@ function playGame() {
   } else if (computerScore > humanScore) {
     alert(`You're No John Connor! Score:${humanScore} Loser! Score:${computerScore}`);
   } else {
-    alert(`A Tie Really? Score:${humanScore} Booooo! Score:{computerScore}`);
+    alert(`A Tie Really? Score:${humanScore} Booooo! Score:${computerScore}`);
   }
 }
 
