@@ -61,10 +61,12 @@ function playGame() {
   console.log("Human:", humanSelection, "Computer:", computerSelection);
   playRound(humanSelection, computerSelection);
   if (humanScore > computerScore) {
-    alert(`You Rule!${humanScore} AI Drools!${computerScore}`);
+    alert(`You Rule! Score:${humanScore} AI Drools! Score:${computerScore}`);
   } else if (computerScore > humanScore) {
-    alert(`You're No John Connor!${humanScore} Loser!${computerScore}`);
+    alert(`You're No John Connor! Score:${humanScore} Loser! Score:${computerScore}`);
   } else {
-    alert(`A Tie Really?${humanScore} Booooo!${computerScore}`);
+    alert(`A Tie Really? Score:${humanScore} Booooo! Score:{computerScore}`);
   }
 }
+
+playGame();
