@@ -1,4 +1,5 @@
 const results = document.querySelector("#results");
+const score = document.querySelector("#score");
 
 function getComputerChoice() {
   const n = Math.floor(Math.random() * 3);
@@ -13,18 +14,21 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    results.textContent = "You Win! Nice!!";
-    humanScore++;
     return "win";
   } else if (humanChoice === computerChoice) {
-    results.textContent = "Crazyyy, you tied?!";
     return "tie";
   } else {
-    results.textContent = "You Lost Bucko!";
-    computerScore++;
     return "lose";
   }
 }
+if (playRound === win) {
+  results.textContent = "You Win!Nice!"
+} else if (playRound === lose) {
+  results.textContent = "Really? You Lost?!"
+} else {
+  results.textContent = "wow. nice. a tie."
+}
+
 
 document
   .querySelector("#rock")
