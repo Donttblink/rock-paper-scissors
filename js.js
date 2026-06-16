@@ -40,32 +40,10 @@ function updateDisplay(result) {
 
 
 document
-  .querySelector("#rock")
-  .addEventListener("click", () => {
-    const result = playRound("rock", getComputerChoice());
-    updateDisplay(result);
-    score.textContent = `You ${humanScore} | Computer ${computerScore}`;
-    if (humanScore === 5) {
-      results.textContent = "Congratulations! You Beat The Machine"
-      const reset = document.createElement("button");
-      results.appendChild(reset);
-      reset.textContent = "Play Again";
-
-
-    }
-    
-  });
-document
-  .querySelector("#paper")
-  .addEventListener("click", () => {
-    const result = playRound("paper", getComputerChoice());
+  .querySelectorAll(".rpsButtons button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const result = playRound((button.id), getComputerChoice());
     updateDisplay(result);
     score.textContent = `You ${humanScore} | Computer ${computerScore}`;
   });
-  document
-  .querySelector("#scissors")
-  .addEventListener("click", () => {
-    const result = playRound("scissors", getComputerChoice());
-    updateDisplay(result);
-    score.textContent = `You ${humanScore} | Computer ${computerScore}`;
-  });
+});
