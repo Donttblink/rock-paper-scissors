@@ -2,6 +2,7 @@ const results = document.querySelector("#results");
 const score = document.querySelector("#score");
 let humanScore = 0;
 let computerScore = 0;
+let reset;
 
 function getComputerChoice() {
   const n = Math.floor(Math.random() * 3);
@@ -44,7 +45,7 @@ function resetGame() {
   document.querySelectorAll(".rpsButtons button").forEach((b) => { 
     b.disabled = false;
   })
-  results.removeChild(reset);
+  reset.remove();
 }
 function endGame(winner) {
   if (winner === "human") {
@@ -55,7 +56,7 @@ function endGame(winner) {
   document.querySelectorAll(".rpsButtons button").forEach((b) => {
     b.disabled = true;
   });
-  const reset = document.createElement("button");
+  reset = document.createElement("button");
   reset.textContent = "Play Again?";
   results.appendChild(reset);
   reset.addEventListener("click", resetGame);
