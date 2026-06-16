@@ -45,6 +45,15 @@ document
     const result = playRound("rock", getComputerChoice());
     updateDisplay(result);
     score.textContent = `You ${humanScore} | Computer ${computerScore}`;
+    if (humanScore === 5) {
+      results.textContent = "Congratulations! You Beat The Machine"
+      const reset = document.createElement("button");
+      results.appendChild(reset);
+      reset.textContent = "Play Again";
+
+
+    }
+    
   });
 document
   .querySelector("#paper")
