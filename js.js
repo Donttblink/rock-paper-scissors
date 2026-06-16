@@ -3,7 +3,6 @@ const score = document.querySelector("#score");
 let humanScore = 0;
 let computerScore = 0;
 
-
 function getComputerChoice() {
   const n = Math.floor(Math.random() * 3);
   if (n === 0) return "rock";
@@ -26,7 +25,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function updateDisplay(result) {
-  if (result === "win") { 
+  if (result === "win") {
     results.textContent = "You Win! Nice!!";
     humanScore++;
   } else if (result === "lose") {
@@ -34,16 +33,40 @@ function updateDisplay(result) {
     computerScore++;
   } else {
     results.textContent = "Yay....A tie...";
-
   }
 }
 
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
+  score.textContent ="";
+  results.textContent = "";
+  document.querySelectorAll(".rpsButtons button").forEach((b) => { 
+    b.disabled = false;
+  })
+  results.removeChild(reset);
+}
+function endGame(winner) {
+  if (winner === "human") {
+    results.textContent = "Congratulations! You Beat the machine!!!";
+  } else if (winner === "computer") {
+    results.textContent = "You Lost?! Sarah and John Connor Died for Nothing!";
+  }
+  document.querySelectorAll(".rpsButtons button").forEach((b) => {
+    b.disabled = true;
+  });
+  const reset = document.createElement("button");
+  reset.textContent = "Play Again?";
+  results.appendChild(reset);
+  reset.addEventListener("click", resetGame);
+}
 
-document
-  .querySelectorAll(".rpsButtons button").forEach((button) => {
+document.querySelectorAll(".rpsButtons button").forEach((button) => {
   button.addEventListener("click", () => {
-    const result = playRound((button.id), getComputerChoice());
+    const result = playRound(button.id, getComputerChoice());
     updateDisplay(result);
     score.textContent = `You ${humanScore} | Computer ${computerScore}`;
+    if (humanScore === 5) endGame("human");
+    else if (computerScore === 5) endGame("computer");
   });
 });
