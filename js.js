@@ -3,6 +3,7 @@ const score = document.querySelector("#score");
 let humanScore = 0;
 let computerScore = 0;
 let reset;
+score.textContent ="You 0 | Computer 0";
 
 function getComputerChoice() {
   const n = Math.floor(Math.random() * 3);
@@ -40,7 +41,7 @@ function updateDisplay(result) {
 function resetGame() {
   humanScore = 0;
   computerScore = 0;
-  score.textContent ="";
+  score.textContent ="You 0 | Computer 0";
   results.textContent = "";
   document.querySelectorAll(".rpsButtons button").forEach((b) => { 
     b.disabled = false;
