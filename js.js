@@ -3,7 +3,7 @@ const score = document.querySelector("#score");
 let humanScore = 0;
 let computerScore = 0;
 let reset;
-score.textContent ="You 0 | Computer 0";
+score.textContent = "You 0 | Computer 0";
 
 function getComputerChoice() {
   const n = Math.floor(Math.random() * 3);
@@ -36,16 +36,17 @@ function updateDisplay(result) {
   } else {
     results.textContent = "Yay....A tie...";
   }
+  score.textContent = `You ${humanScore} | Computer ${computerScore}`;
 }
 
 function resetGame() {
   humanScore = 0;
   computerScore = 0;
-  score.textContent ="You 0 | Computer 0";
+  score.textContent = "You 0 | Computer 0";
   results.textContent = "";
-  document.querySelectorAll(".rpsButtons button").forEach((b) => { 
+  document.querySelectorAll(".rpsButtons button").forEach((b) => {
     b.disabled = false;
-  })
+  });
   reset.remove();
 }
 function endGame(winner) {
@@ -67,7 +68,6 @@ document.querySelectorAll(".rpsButtons button").forEach((button) => {
   button.addEventListener("click", () => {
     const result = playRound(button.id, getComputerChoice());
     updateDisplay(result);
-    score.textContent = `You ${humanScore} | Computer ${computerScore}`;
     if (humanScore === 5) endGame("human");
     else if (computerScore === 5) endGame("computer");
   });
