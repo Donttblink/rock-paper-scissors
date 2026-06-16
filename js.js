@@ -5,9 +5,10 @@ function getComputerChoice() {
   return "scissors";
 }
 
-const computerChoice = getComputerChoice();
-
 function playRound(humanChoice, computerChoice) {
+  const score = document.createElement("div");
+  const result = document.createElement("p");
+
   if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
@@ -24,7 +25,15 @@ function playRound(humanChoice, computerChoice) {
     computerScore++;
     return "lose";
   }
+  score.appendChild(result);
 }
 
-const rock = document.querySelector("#rock");
- btn.addEventListener("click", playRound);
+document
+  .querySelector("#rock")
+  .addEventListener("click", () => playRound("rock", getComputerChoice()));
+document
+  .querySelector("#paper")
+  .addEventListener("click", () => playRound("paper", getComputerChoice()));
+document
+  .querySelector("#scissors")
+  .addEventListener("click", () => playRound("scissors", getComputerChoice()));
